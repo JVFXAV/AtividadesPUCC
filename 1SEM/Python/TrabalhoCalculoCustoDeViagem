@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+def calculo_tempo(distancia,velocidadeMedia):
+    tempo= distancia/velocidadeMedia
+    return tempo 
+
+def calculo_consumo(consumo,distancia,custo):
+    custototal= (custo/consumo)*distancia
+    return custototal
+
+
+
+dados=[{"nome":"Andre","viagem":[50,100,70,5.25,10]},
+       {"nome":"Bruna","viagem":[100,100,60,6.50,8]},
+       {"nome":"Jorge","viagem":[150,120,85,8.50,5]},
+       {"nome":"Claudio","viagem":[200,100,75,9.25,7]},
+       {"nome":"Vinicius","viagem":[180,90,65,10,8]},
+       {"nome":"Angela","viagem":[60,170,90,7.25,11]},
+       {"nome":"Bernardo","viagem":[80,150,75,9.50,12]},
+       {"nome":"Joao","viagem":[85,135,90,5.50,9]},
+       {"nome":"Clovis","viagem":[220,135,85,10.25,13]},
+       {"nome":"Victor","viagem":[195,145,95,10.45,15]},
+       ]
+
+print("DADOS ARMAZENADOS: ",dados)
+print("\n\nDADOS SEPARADOS POR LINHA:")
+    
+for i in dados:
+    print(i)
+    
+    
+for lin in dados:   
+    nm=lin["nome"]
+    vg=lin["viagem"]
+
+    dist=float(vg[0])
+    velmed=float(vg[1])
+    tv1=calculo_tempo(dist,velmed)
+    print(f"\nViagem de {dist} km com velocidade média de {velmed}")
+    print(f"Tempo de viagem = {tv1} horas")
+
+for lin in dados:
+    nm1=lin["nome"]
+    vg1=lin["viagem"]
+    
+    cons=float(vg1[4])
+    dist2=float(vg1[0])
+    cost=float(vg1[3])
+    calccon=calculo_consumo(cons,dist2,cost)
+    print(f"\nPreço da viagem de {dist2} km, onde o litro do combustível é {cost}, será no valor de {calccon:.2f} reais")
+    
+    
+for lin in dados:
+    nm2=lin["nome"]
+    vg2=lin["viagem"]
+    cons=(vg2[4])
+    dist2=(vg2[0])
+    cost=(vg2[3])
+    pedagio=(vg2[2])
+    calccontot=calculo_consumo(cons,dist2,cost)+pedagio
+    print(f"\nPreço total da viagem de {dist2} km, onde o litro do combustível é {cost} e o pedágio no valor de {pedagio}, o valor será de {calccontot:.2f} reais")
