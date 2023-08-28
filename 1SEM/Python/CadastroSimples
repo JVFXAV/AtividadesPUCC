@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 27 08:45:16 2023
+
+@author: 23003634
+"""
+
+print("\nBem vindo ao sistema, insira uma das opções abaixo: ")
+print("\n1.Cadastrar senha")
+print("\n2.Acessar sistema")
+
+
+OPT=(int)(input(": "))
+
+if OPT==1:
+    S=(int)(input("\ncadastre sua senha: "))
+else:
+    if OPT==2:
+        S2=(int)(input("\ninsira sua senha: "))
+    else:
+        if OPT==3:
+            print("Obrigado pelo acesso")
+        
+while OPT!=0 and OPT<=2:
+    print("\nBem vindo ao sistema, insira uma das opções abaixo: ")
+    print("\n1.Cadastrar senha")
+    print("\n2.Acessar sistema")
+    
+    break
+
+OPT=(int)(input(": "))
+i=0
+
+if OPT==1:
+    S=(int)(input("\ncadastre sua senha: "))
+else:
+    if OPT==2:
+        S2=(int)(input("\ninsira sua senha: "))
+            
+        
+if S==S2:
+    print("\nAcesso permitido!")
+else:
+    while(S!=S2):
+        print("\nAcesso negado!")
+        i=i+1
+        print("\nNúmero de tentativas ",i)
+        S2=(int)(input("\ninsira sua senha: "))
+        if S==S2:
+            print("\nAcesso permitido!")
