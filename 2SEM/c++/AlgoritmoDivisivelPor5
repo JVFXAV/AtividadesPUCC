@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int var;
+    int J=0;
+    while(J==0){
+        cout << "Digite valor: "<< "\n";
+        cin >> var;
+        if(var%5 == 0){
+            cout << "Divisivel por 5!"<< "\n";
+        }
+        else{
+        cout << "Não divisível por 5!"<< "\n";
+        }
+        cout << "Deseja sair? (1 para sim 0 para não): "<< "\n";
+        cin >> J;
+        
+        if (J==1){
+            break;
+        }
+        else{
+            continue;
+        }
+    }
+    
+}
