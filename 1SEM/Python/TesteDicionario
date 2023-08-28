@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+data= [{"DOENÇA":"GRIPE","SINTOMAS":["TOSSE","FEBRE","DOR GARGANTA","CORIZA"]},
+       {"DOENÇA":"MALARIA","SINTOMAS":["FEBRE","SUDORESE","DOR CORPO"]},
+       {"DOENÇA":"COVID","SINTOMAS":["FEBRE","TOSSE","DOR PEITO"]},
+       {"DOENÇA":"DENGUE","SINTOMAS":["FEBRE","DOR MUSCULAR","NÁUSEA"]},
+       ]
+
+
+for i in data:
+    print("A doença ",i["DOENÇA"]," possui os seguintes sintomas: ",i["SINTOMAS"])
+
+vdata= input("Digite a doença que deseja verificar: ")
+flag=False
+for i in data:
+    if vdata==i["DOENÇA"]:
+        print("A doença: ",vdata,"está cadastrada")
+        flag=True
+        print (i["SINTOMAS"])
+        
+if flag==False:
+    print("DOENÇA NÃO CADASTRADA")
+
+sintoma1=input("DIGITE UM SINTOMA: ").upper()
+sintoma2=input("DIGITE UM SINTOMA: ").upper()
+
+totalsintomas=0
+
+somasintomas=[]
+for lin in data:
+    st=lin["SINTOMAS"]
+    soma=0
+    for j in st:
+        if sintoma1==j:
+            soma=soma+1
+        if sintoma2==j:
+            soma=soma+1
+    somasintomas.append(soma)
+
+    cont=0
+    for lin in data:
+        doenca=lin["DOENÇA"]
+        percentual=somasintomas[cont]/ totalsintomas[cont]
+        print(doenca,"=",percentual*100)
+        cont=cont+1
