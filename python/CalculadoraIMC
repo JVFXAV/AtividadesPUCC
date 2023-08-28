@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 13 08:17:13 2023
+
+@author: 23003634
+"""
+print("_"*30)
+print("\n")
+P=(float)(input("insira seu peso aqui: "))
+H=(float)(input("insira sua altura aqui: "))
+IMC=(P/(H*H))
+print("_"*30)
+print("\n")
+if IMC<18.5:
+    print("abaixo do peso")
+if (IMC>=18.5) and (IMC<24.99):
+    print("peso ideal")
+if (IMC>=24.99) and (IMC<29.99):
+    print("sobrepeso")
+if (IMC>=29.99):
+    print("obesidade")
+    
