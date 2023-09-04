@@ -1,0 +1,45 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    int K, N, M, i, j,soma=0;
+    
+    cout << "Para a matriz N x M digite N e M: " << endl;
+    cin >> N >> M;
+    int a[N][M];
+    
+    cout << "Digite os valores para matriz: " << endl;
+    for(i = 0; i < N; i++)
+        for(j = 0; j < M; j++){
+            cout << "[" << i+1 << "][" << j + 1 << "]: ";
+            cin >> a[i][j];
+    }
+    
+    for(i=0;i<N;i++){
+        cout << endl;
+        for(j=0; j < M; j++){
+            cout << setw(4)<< a[i][j];
+        }
+    }
+    
+    cout << "\nDigite o numero da linha que deseja realizar o somatório: " << endl;
+    cin >> K;
+    if (0<K<N){
+        for(j=0;j<M;j++){
+        cout << setw(4) << a[K][j];
+        soma = soma + a[K][j];
+        }
+        cout <<"\n\n" << "a soma é = " << soma;
+    }
+    else{
+        cout << "Valor de K inválido" << endl;
+    }
+    
+    
+    return 0;
+    
+    
+}
