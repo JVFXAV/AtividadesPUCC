@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+struct produtos{
+    int codigo;
+    char nome[30];
+    int quantia;
+    float preco;
+};
+
+int ler_N(int N, produtos prods[]) {
+    if (N <= 0) {
+        cout << "O número de produtos deve ser maior que zero." << endl;
+        return 0; 
+    }
+
+    for (int i = 0; i < N; i++) {
+        cout << "Digite codigo, nome, quantia e preço do Produto " << i + 1 << ":" << endl;
+        cin >> prods[i].codigo >> prods[i].nome >> prods[i].quantia >> prods[i].preco;
+        cin.ignore();
+    }
+
+    for (int i = 0; i < N; i++) {
+        cout << endl;
+        cout << "Produto " << i + 1 << ":" << endl;
+        cout << "Codigo: " << prods[i].codigo << endl;
+        cout << "Nome: " << prods[i].nome << endl;
+        cout << "Quantidade em estoque: " << prods[i].quantia << endl;
+        cout << "Preço: " << prods[i].preco << endl;
+    }
+
+    return N; 
+}
+
+void acr_prods(int N, produtos prods[]){
+    int codigo, quantiacomprada;
+    cout << "Digite codigo do produto a ser atualizado: " << endl;
+    cin >> codigo;
+    
+    for(int i=0;i<N;i++){
+        if(prods[i].codigo == codigo){
+            cout << "Digite quantia comprada: ";
+            cin >> quantiacomprada;
+            prods[i].quantia += quantiacomprada;
+        }
+    }
+    
+}
+
+int ler(int N, produtos prods[]){
+    for (int i = 0; i < N; i++) {
+        cout << endl;
+        cout << "Produto " << i + 1 << ":" << endl;
+        cout << "Codigo: " << prods[i].codigo << endl;
+        cout << "Nome: " << prods[i].nome << endl;
+        cout << "Quantidade em estoque: " << prods[i].quantia << endl;
+        cout << "Preço: " << prods[i].preco << endl;
+    }
+}
+
+int main() {
+    int N;
+    cout << "Digite quantos produtos deseja cadastrar: " << endl;
+    cin >> N;
+    cin.ignore();
+    struct produtos prods[N];
+    ler_N(N, prods);
+    acr_prods(N, prods);
+    ler(N, prods);
+    
+    return 0;
+}
